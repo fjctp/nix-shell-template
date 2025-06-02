@@ -1,0 +1,11 @@
+OUT_DIR := "./build"
+
+shell:
+  nix-shell
+
+build:
+  mkdir -p {{OUT_DIR}}
+  rustc main.rs --out-dir {{OUT_DIR}}
+
+run: build
+  {{OUT_DIR}}/main
