@@ -7,7 +7,7 @@
 # - https://github.com/luxonis/depthai/issues/518
 
 { pkgs ? import <nixpkgs> {} }: 
-(pkgs.buildFHSUserEnv {
+(pkgs.buildFHSEnv {
   name = "depthAI";
   targetPkgs = pkgs: (with pkgs; [
     # Python
