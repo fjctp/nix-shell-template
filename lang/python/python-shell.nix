@@ -1,7 +1,7 @@
 let
   # Pin nixpkgs.
   nixpkgs = fetchTarball "https://github.com/NixOS/nixpkgs/tarball/nixos-25.05";
-  pkgs = import nixpkgs { config = {}; overlays = []; };
+  pkgs = import nixpkgs { config = { allowUnfree = true; }; overlays = []; };
 in pkgs.mkShell {
   packages = [
     (pkgs.python3.withPackages (python-pkgs: with python-pkgs; [
